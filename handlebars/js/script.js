@@ -5,17 +5,34 @@ $(document).ready(
   function() {
 
 
+
   $('#invio').on('click',
   function() {
-
+    var MyText = $('#mymsg').val();
     var source = document.getElementById("entry-template").innerHTML;
     var template = Handlebars.compile(source);
     var context = {
-      text: "Ok",
+      text: MyText,
       time: '23.00',
+      sentreceived: 'sent',
      };
     var html = template(context);
     $('#container').append(html);
+
+    setTimeout(function() {
+      var source = document.getElementById("entry-template").innerHTML;
+      var template = Handlebars.compile(source);
+      var context = {
+        text: 'ciao',
+        time: '23.00',
+        sentreceived: 'received',
+       };
+      var html = template(context);
+      $('#container').append(html);
+
+    }, 1000);
+
+
     });
 
 

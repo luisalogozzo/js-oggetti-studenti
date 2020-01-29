@@ -8,7 +8,7 @@
     <title></title>
   </head>
   <body>
-  <input type="text" name="" value="">
+  <input id="mymsg" type="text" name="" value="">
   <button id="invio" type="button" name="button"></button>
   <div id="container">
 
@@ -16,7 +16,7 @@
 
 
   <script id="entry-template" type="text/x-handlebars-template">
-    <div class="message">
+    <div class="message {{sentreceived}}">
       <p>{{text}}</p>
       <time>{{time}}</time>
       </div>
